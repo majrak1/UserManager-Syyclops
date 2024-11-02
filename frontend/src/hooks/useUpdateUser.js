@@ -11,7 +11,7 @@ function useUpdateUser() {
     console.log(updatedData);
 
     try {
-      // Make a PUT request to update the user
+      // PUT request to update the user
       const response = await fetch(`http://127.0.0.1:8000/users/${userId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -23,7 +23,7 @@ function useUpdateUser() {
       const result = await response.json();
       console.log(result);
 
-      // Return only the user data from the response
+      // return only the user data from the response
       return result.user; 
     } catch (error) {
       setUpdateError(error.message);
