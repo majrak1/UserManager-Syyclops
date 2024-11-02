@@ -8,15 +8,15 @@ function useUpdateUser() {
     setIsUpdating(true);
     setUpdateError(null);
 
-    console.log(updatedData);
-
     try {
-      // Make a PUT request to update the user
-      const response = await fetch(`http://127.0.0.1:8000/users/${userId}`, {
+      // PUT request to update the user
+      console.log("updateData: ", updatedData)
+      const response = await fetch(`https://dummyjson.com/users/${userId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedData),
       });
+      console.log(response);
 
       if (!response.ok) throw new Error("Failed to update user");
 

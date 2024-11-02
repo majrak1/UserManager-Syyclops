@@ -9,10 +9,7 @@ function useFetchUsers() {
     const fetchUsers = async () => {
       setLoading(true);
       try {
-
-        // uncomment the following line (and comment the line after that) to fetch the dummy users (do accordingly in Sidebar.js, useUpdateUser.js, and Content.js as well)
-        // const response = await fetch("https://dummyjson.com/users?limit=20");
-        const response = await fetch("http://127.0.0.1:8000/users");
+        const response = await fetch("https://dummyjson.com/users?limit=20");
 
         if (!response.ok) throw new Error("Failed to fetch users");
         const data = await response.json();
@@ -27,7 +24,7 @@ function useFetchUsers() {
     fetchUsers();
   }, []);
 
-  return { users, loading, error };
+  return { users, setUsers, loading, error };
 }
 
 export default useFetchUsers;
