@@ -1,8 +1,8 @@
 import React from "react";
 
-function Sidebar({ accounts, onSelectAccount }) {
+function Sidebar({ accounts, selectedUserId, onSelectAccount }) {
   return (
-    <div className="w-72 bg-gray-800 text-white p-6 border-r shadow-lg h-full overflow-y-scroll" style={{backgroundColor: "rgb(10, 14, 45)"}}>      
+    <div className="w-72 bg-gray-800 text-white p-6 border-r shadow-lg h-full overflow-y-scroll" style={{ backgroundColor: "rgb(10, 14, 45)" }}>      
       <div className="flex justify-center mb-6">
         <img
           src="/logo-syyclops.png"
@@ -17,7 +17,11 @@ function Sidebar({ accounts, onSelectAccount }) {
           <li
             key={account.id}
             onClick={() => onSelectAccount(account.id)}
-            className="p-3 cursor-pointer hover:text-orange-500 transition-colors rounded-lg"
+            className={`p-3 cursor-pointer transition-colors rounded-lg ${
+              selectedUserId === account.id
+                ? "text-orange-500 font-semibold"
+                : "hover:text-orange-500"
+            }`}
           >
             {account.name}
           </li>
