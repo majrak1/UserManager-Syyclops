@@ -21,7 +21,6 @@ function App() {
 
   return (
     <div className="flex h-screen">
-      {/* Menu button, only visible on small screens */}
       <div className="sm:hidden absolute top-4 left-4 z-50">
         <button
           onClick={toggleSidebar}

@@ -35,7 +35,7 @@ function Content({ selectedAccount }) {
       setFormData({});
       setIsEditing(false);
   
-      // Refresh the page after 100ms
+      // Refresh the page after 50ms
       setTimeout(() => {
         window.location.reload();
       }, 50);
