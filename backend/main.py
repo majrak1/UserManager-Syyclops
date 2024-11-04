@@ -1,14 +1,14 @@
 from typing import List
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, EmailStr, Field
-from users import get_users  # Import the get_users function
+from users import get_users
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Change this to your React app's origin
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

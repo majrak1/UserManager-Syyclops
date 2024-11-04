@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from main import app  # Import the FastAPI app
+from main import app
 import pytest
 
 client = TestClient(app)
@@ -40,7 +40,6 @@ def test_update_user_empty_email():
     assert response.json()["detail"][0]["type"] == "value_error"
 
 def test_update_user_with_valid_data():
-    # Update a user with valid data
     response = client.put("/users/1", json={"name": "John Updated", "email": "john.updated@doe.com"})
     assert response.status_code == 200
     assert response.json()["message"] == "User updated successfully"
